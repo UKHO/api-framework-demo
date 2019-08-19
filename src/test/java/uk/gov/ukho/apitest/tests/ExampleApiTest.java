@@ -22,7 +22,7 @@ public class ExampleApiTest {
     }
 
     @Test
-    public void WhenCallPostsEndpointThenSuccessStatusReturned() {
+    public void whenCallPostsEndpointThenSuccessStatusReturned() {
         response = exampleApiService.getAllPosts();
 
         assertThat(response.statusCode())
@@ -31,9 +31,8 @@ public class ExampleApiTest {
     }
 
     @Test
-    public void WhenCallPostsEndpointThenJsonBodyIsCorrect() {
+    public void whenCallPostsEndpointThenJsonBodyIsCorrect() {
         response = exampleApiService.getAllPosts();
-
         JsonPath jsonPath = response.jsonPath();
 
         SoftAssertions softly = new SoftAssertions();
@@ -50,7 +49,7 @@ public class ExampleApiTest {
     }
 
     @Test
-    public void WhenCreateANewPostThenSuccessStatusReturned() {
+    public void whenCreateANewPostThenSuccessStatusReturned() {
         String body = createExampleJsonPostBody();
 
         response = exampleApiService.createANewPost(body);
