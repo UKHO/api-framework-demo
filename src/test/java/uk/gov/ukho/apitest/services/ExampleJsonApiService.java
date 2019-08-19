@@ -22,6 +22,16 @@ public class ExampleJsonApiService {
                 .extract();
     }
 
+    public ExtractableResponse<Response> createANewPost(final String body) {
+        createRequestSpec("application/json");
+        return given(spec)
+                .when()
+                .body(body)
+                .post("/posts")
+                .then()
+                .extract();
+    }
+
     //Use this method to build the request, e.g. authorisation, headers
     private void createRequestSpec(final String acceptHeader) {
         spec = new RequestSpecBuilder()
