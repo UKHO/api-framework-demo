@@ -24,4 +24,4 @@ The project uses:
 Contributions welcome! It may be better to speak to the UKHO test leads before submitting a Pull Request to avoid spending time on something that may not be required :smiley:
 
 ## Licence
-[MIT © UKHO](LICENCE)
+[MIT © UKHO](https://raw.githubusercontent.com/UKHO/licences/master/ukho-int/license.md)
