@@ -14,6 +14,7 @@ steps:
   inputs:
     script: 'printf ''%s\n'' ''azure.keyvault.uri=$(KeyVault.Uri)'' ''azure.keyvault.client-id=$(KeyVault.ClientId)'' ''azure.keyvault.client-key=$(KeyVault.ClientKey)'' >application.properties'
     workingDirectory: '$(System.DefaultWorkingDirectory)/src/main/resources/'
+  displayName: Generate application.properties file for Azure Key Vault
 
 - task: Maven@3
   inputs:
@@ -25,3 +26,4 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'test'
+  displayName: Build and Run api-framework-demo tests
