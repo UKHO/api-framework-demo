@@ -4,13 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.7.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
-
     <groupId>ukho.gov.uk</groupId>
     <artifactId>api-framework-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -19,7 +12,8 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <azure.version>2.1.6</azure.version>
+        <version.spring>2.1.7.RELEASE</version.spring>
+        <version.azure>2.1.6</version.azure>
         <version.rest-assured>4.0.0</version.rest-assured>
         <version.junit>4.12</version.junit>
         <version.assertj>3.13.2</version.assertj>
@@ -86,7 +80,14 @@
             <dependency>
                 <groupId>com.microsoft.azure</groupId>
                 <artifactId>azure-spring-boot-bom</artifactId>
-                <version>${azure.version}</version>
+                <version>${version.azure}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${version.spring}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
