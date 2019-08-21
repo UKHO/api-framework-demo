@@ -7,18 +7,27 @@ import org.apache.http.HttpStatus;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 import uk.gov.ukho.apitest.services.ExampleJsonApiService;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class ExampleApiTest {
 
     private ExampleJsonApiService exampleApiService;
     private ExtractableResponse response;
 
+    @Value("${baseEndpoint}")
+    private String apiBaseEndpoint;
+
     @Before
     public void setup() {
-        exampleApiService = new ExampleJsonApiService();
+        exampleApiService = new ExampleJsonApiService(apiBaseEndpoint);
     }
 
     @Test
