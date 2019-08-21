@@ -10,9 +10,9 @@ import static io.restassured.RestAssured.given;
 public class ExampleJsonApiService {
 
     private RequestSpecification spec;
-    private String apiBaseEndpoint;
+    private final String apiBaseEndpoint;
 
-    public ExampleJsonApiService(String apiBaseEndpoint) {
+    public ExampleJsonApiService(final String apiBaseEndpoint) {
         this.apiBaseEndpoint = apiBaseEndpoint;
     }
 
