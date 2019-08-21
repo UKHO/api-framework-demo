@@ -10,8 +10,11 @@ import static io.restassured.RestAssured.given;
 public class ExampleJsonApiService {
 
     private RequestSpecification spec;
+    private final String apiBaseEndpoint;
 
-    private final String API_BASE = "https://jsonplaceholder.typicode.com";
+    public ExampleJsonApiService(final String apiBaseEndpoint) {
+        this.apiBaseEndpoint = apiBaseEndpoint;
+    }
 
     public ExtractableResponse<Response> getAllPosts() {
         createRequestSpec("application/json");
@@ -35,7 +38,7 @@ public class ExampleJsonApiService {
     //Use this method to build the request, e.g. authorisation, headers
     private void createRequestSpec(final String acceptHeader) {
         spec = new RequestSpecBuilder()
-                .setBaseUri(API_BASE)
+                .setBaseUri(apiBaseEndpoint)
                 .setAccept(acceptHeader)
                 .build();
     }
