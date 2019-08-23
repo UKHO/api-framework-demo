@@ -8,6 +8,12 @@ This helps us meet our vision of testing APIs before GUIs, and to use the best t
 
 This project is intended to be cloned or used as an exemplar for new projects where API testing is required.
 
+## API Under Test
+
+This project uses the on-line JSONPlaceholder API as an example API to test. The path is held in an Azure Key Vault.
+
+[JSONPlaceholder]([https://jsonplaceholder.typicode.com/)
+
 ## Usage
 
  The Azure DevOps pipeline generates the `application.properties` file that contains the following Azure Key Vault information:
