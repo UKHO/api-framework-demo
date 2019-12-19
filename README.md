@@ -12,7 +12,7 @@ This project is intended to be cloned or used as an exemplar for new projects wh
 
 This project uses the on-line JSONPlaceholder API as an example API to test. The path is held in an Azure Key Vault.
 
-[JSONPlaceholder]([https://jsonplaceholder.typicode.com/)
+[JSONPlaceholder](https://jsonplaceholder.typicode.com/)
 
 ## Usage
 
